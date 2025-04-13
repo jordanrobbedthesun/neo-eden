@@ -12,7 +12,7 @@ import SettingsScreen from '../screens/SettingScreen';
 
 const Tab = createBottomTabNavigator();
 
-// Empty screen just for tab to work
+// Dummy screen used for the Camera tab (we show a modal instead)
 const DummyScreen = () => <View style={{ flex: 1, backgroundColor: '#1a1a1a' }} />;
 
 export default function TabNavigator() {
@@ -66,13 +66,14 @@ export default function TabNavigator() {
           headerShown: true,
           tabBarStyle,
           tabBarShowLabel: false,
+          tabBarHideOnKeyboard: true, // ✅ this came from `main`
         }}
         screenListeners={{
           tabPress: (e) => {
             const isCameraTab = e.target?.includes('Camera');
             if (isCameraTab) {
-              e.preventDefault(); // Prevent default navigation
-              setCameraModalVisible(true); // Show our modal
+              e.preventDefault(); // Stop default navigation
+              setCameraModalVisible(true); // Show camera modal
             }
           },
         }}
@@ -97,7 +98,7 @@ export default function TabNavigator() {
         />
         <Tab.Screen
           name="Camera"
-          component={DummyScreen}
+          component={DummyScreen} // Dummy screen to intercept tabPress
           options={{
             tabBarIcon: ({ color }) => (
               <Image source={require('../../assets/pictures/navbar/4.png')} style={{ width: 35, height: 35, tintColor: color }} />
@@ -124,7 +125,7 @@ export default function TabNavigator() {
         />
       </Tab.Navigator>
 
-      {/* 🔽 Modal that slides up with camera options */}
+      {/* Modal for Camera / Gallery options */}
       <Modal
         visible={cameraModalVisible}
         animationType="slide"
@@ -166,3 +167,4 @@ export default function TabNavigator() {
     </>
   );
 }
+
