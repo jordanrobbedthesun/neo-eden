@@ -112,7 +112,7 @@ export default function NewsScreen() {
 {/* Header with logo and action buttons */}
     <Image
       source={require('../../assets/images/logo-white.png')}
-      style={[styles.logo, { height: 85 }]} // slightly bigger
+      style={[styles.logo, { height: 80 }]} // slightly bigger
     />
 
     <View style={styles.headerRow}>
@@ -231,7 +231,7 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: '100%',
-    height: 53,
+    height: 37,
     resizeMode: 'contain',
     alignSelf: 'center',
     marginTop: 60,

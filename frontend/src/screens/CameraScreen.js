@@ -67,15 +67,17 @@ export default function CameraScreen({ navigation }) {
      };
 
      return (
-          <ScrollView
-               contentContainerStyle={{
-                    flexGrow: 1,
-                    backgroundColor: '#1a1a1a',
-                    padding: 24,
-                    alignItems: 'center',
-                    justifyContent: 'flex-start',
-               }}
-          >
+               <ScrollView
+                    contentContainerStyle={{
+                         flexGrow: 1,
+                         backgroundColor: '#1a1a1a',
+                         padding: 24,
+                         paddingBottom: 100, // 👈 Adds space so button doesn’t hide behind tab bar
+                         alignItems: 'center',
+                         justifyContent: 'flex-start',
+                    }}
+               >
+
                {/* Neo Eden logo at top */}
                <Image
                     source={require('../../assets/images/logo-white.png')}
