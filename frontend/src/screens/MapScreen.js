@@ -56,8 +56,8 @@ const styles = StyleSheet.create({
           backgroundColor: '#4A4522',
      },
      logo: {
-          width: 150,
-          height: 40,
+          width: '100%',
+          height: 65,
           resizeMode: 'contain',
           alignSelf: 'center',
           marginTop: 60,
