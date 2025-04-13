@@ -24,7 +24,7 @@ export default function LoginScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../assets/images/logo-white.png')}
+        source={require('../../assets/images/logo-white2.png')}
         style={styles.logo}
         resizeMode="contain"
       />
@@ -70,10 +70,11 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: '100%',
-    height: undefined,
-    aspectRatio: 5.5, // Adjust this based on logo shape (yours is wide)
+    height: 200,
+    minHeight: 150,
+    aspectRatio: 5.5,
     marginBottom: 40,
-  },  
+  },
   input: {
     width: '100%',
     backgroundColor: '#2b2b2b',
