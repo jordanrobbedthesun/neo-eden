@@ -1,12 +1,11 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
-import NewsScreen from './src/screens/NewsScreen';
+import { NavigationContainer } from '@react-navigation/native';
+import AuthNavigator from './src/navigation/AuthNavigator';
 
 export default function App() {
   return (
-    <>
-      <StatusBar style="light" />
-      <NewsScreen />
-    </>
+    <NavigationContainer>
+      <AuthNavigator />
+    </NavigationContainer>
   );
 }
